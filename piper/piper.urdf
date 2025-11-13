@@ -4,6 +4,38 @@
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
   name="piper">
+
+  <!-- 新增的虚拟根链接（无惯性），KDL动力学库不支持为根链接设置惯性属性 -->
+  <link
+    name="base_footprint">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.01 0.01 0.01" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 0.5 0.5 0.2" />
+      </material>
+    </visual>
+  </link>
+  
+  <!-- 固定关节连接虚拟根链接和原来的base_link -->
+  <joint
+    name="base_footprint_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_footprint" />
+    <child
+      link="base_link" />
+  </joint>
+
   <link
     name="base_link">
     <inertial>

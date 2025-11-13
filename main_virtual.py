@@ -4,14 +4,16 @@ import pygame
 
 # Choose the appropriate controller based on the inverse kinematics algorithm
 # from src.gamepad_pin import RoboticArmController
-from src.gamepad_curobo import RoboticArmController
+# from src.gamepad_curobo import RoboticArmController
+from src.gamepad_trac_ik import RoboticArmController
 # from src.gamepad_limit import RoboticArmController
 # from src.gamepad_no_limit import RoboticArmController
 
 
 class Teleop(RoboticArmController):
     def __init__(self, urdf_path: str = None, mesh_path: str = None, root_name: str = None, target_link_name: str = None):
-        super().__init__(urdf_path, mesh_path, root_name, target_link_name)
+            # controller.print_state()
+        super().__init__(urdf_path, mesh_path, root_name, target_link_name = target_link_name)
 
 def get_current_path():
     """Get current path"""
