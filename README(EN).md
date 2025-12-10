@@ -79,8 +79,8 @@ PiPER Robotic Arm, Gamepad Teleoperation, Joint Control, Pose Control, Gripper C
       git clone https://github.com/chenhaox/pytracik.git
       cd pytracik
       pip install -r requirements.txt
-      sudo apt install libboost-all-dev libeigen3-dev liborocos-kdl-dev libnlopt-dev libnlopt-cxx-dev
-      python setup_linux.py install
+      sudo apt install g++ libboost-all-dev libeigen3-dev liborocos-kdl-dev libnlopt-dev libnlopt-cxx-dev
+      python setup_linux.py install --user
       ```
 
       You need to select `from src.gamepad_trac_ik import RoboticArmController` in the `main.py` and `main_virtual.py` files.

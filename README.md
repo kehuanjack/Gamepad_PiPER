@@ -79,8 +79,8 @@ PiPER机械臂、手柄遥操、关节控制、位姿控制、夹爪控制、运
       git clone https://github.com/chenhaox/pytracik.git
       cd pytracik
       pip install -r requirements.txt
-      sudo apt install libboost-all-dev libeigen3-dev liborocos-kdl-dev libnlopt-dev libnlopt-cxx-dev
-      python setup_linux.py install
+      sudo apt install g++ libboost-all-dev libeigen3-dev liborocos-kdl-dev libnlopt-dev libnlopt-cxx-dev
+      python setup_linux.py install --user
       ```
 
       需要在`main.py`和`main_virtual.py`文件中选择`from src.gamepad_trac_ik import RoboticArmController`
